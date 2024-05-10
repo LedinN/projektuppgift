@@ -23,16 +23,16 @@ public class SimplePlayerInteractionTest {
     }
 
     @Test
-    @DisplayName("Sätt namn på player och bekräfta att det fungerar")
-    void testSetupPlayer() {
+    @DisplayName("Set and verify player name during setup")
+    void should_CorrectlySetPlayerName_When_SetupPlayer() {
         playerInteraction = playerTestSetup("kalle kråka");
         playerInteraction.setupPlayer(player);
         assertEquals("kalle kråka", player.getName());
     }
 
     @Test
-    @DisplayName("Uppdatera HP på player och bekräfta att det fungerar")
-    void testUpdatePlayerHealth() {
+    @DisplayName("Update and confirm player HP")
+    void should_CorrectlyUpdatePlayerHP_When_UpdatingHealth() {
         playerInteraction = playerTestSetup("kalle boll");
         playerInteraction.updatePlayerHealth(player,5);
         assertEquals(5,player.getHp());

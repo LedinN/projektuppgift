@@ -18,8 +18,8 @@ class ActorTest {
     }
 
     @Test
-    @DisplayName("Testa .attack")
-    void testAttack() {
+    @DisplayName("Verify Goblin attacks reduce Player's HP correctly")
+    void should_ReducePlayerHP_When_GoblinAttacks() {
         goblin.attack(player);
         assertEquals(1,player.getHp());
     }

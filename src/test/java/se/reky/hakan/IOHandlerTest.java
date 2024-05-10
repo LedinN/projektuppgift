@@ -17,15 +17,15 @@ class IOHandlerTest {
     }
 
     @Test
-    @DisplayName("Testa så scanner.nextLine innehåller samma data som den instansieras med")
-    void testScannerData() {
+    @DisplayName("Ensure Scanner.nextLine returns expected data")
+    void should_ReturnExpectedData_When_UsingScannerNextLine() {
         ioHandler = testHandler("test");
         assertEquals("test", ioHandler.nextLine());
     }
 
     @Test
-    @DisplayName("Testa så scannern konverterar en sträng till en integer när vi använder .hasNextInt")
-    void testIOHandler() {
+    @DisplayName("Ensure scanner converts string to integer")
+    void should_IdentifyInteger_When_UsingHasNextInt() {
         ioHandler = testHandler("1");
         assertTrue(ioHandler.hasNextInt());
     }
