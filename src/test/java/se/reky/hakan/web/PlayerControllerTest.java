@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import se.reky.hakan.repository.PlayerRepository;
 import se.reky.hakan.service.PlayerService;
@@ -75,8 +76,8 @@ class PlayerControllerTest {
         driver.get("http://localhost:8080/players");
         driver.findElement(By.className("player-name")).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement playerName = driver.findElement(By.className("player-name"));
-        WebElement playerExp = driver.findElement(By.className("player-exp"));
+        WebElement playerName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("player-name")));
+        WebElement playerExp = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("player-exp")));
         assertTrue(playerName.isDisplayed() && playerExp.isDisplayed());
     }
 }

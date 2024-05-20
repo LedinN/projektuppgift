@@ -12,7 +12,7 @@ class GameUtilTest {
 
     @Test
     @DisplayName("Expect GameException when input is null")
-    void should_ThrowGameException_When_InputIsNull() throws Exception {
-        assertThrows(GameException.class, () -> gameUtil.toLowerCaseButFirstLetterCapitalized(null));
+    void should_ThrowGameException_When_InputIsNull() {
+            assertThrows(GameException.class, () -> gameUtil.toLowerCaseButFirstLetterCapitalized(null));
     }
 }
